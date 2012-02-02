@@ -105,3 +105,8 @@ div#error_explanation {
 div#error_explanation h2 {
   font-size: 100%;
 }
+
+.big-number {
+  font-weight: bold;
+  font-size: 130%;
+}

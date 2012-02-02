@@ -227,6 +227,10 @@ en:
       user:
         email: "Email"
         password: "Senha"
+      document:
+        subject: "Assunto"
+        recipient: "Destinatário"
+        dispatch_number: "Número"
     errors:
       template:
         header:

@@ -1,3 +1,4 @@
+#encoding:UTF-8
 class DocumentsController < ApplicationController
   before_filter :authenticate_user!
   
@@ -14,9 +15,14 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    @document = Document.new(params[:document])
+    @document = current_user.documents.build(params[:document])
+    unless Document.all.empty?
+      @document.update_attributes(:dispatch_number => Document.last.dispatch_number + 1)
+    else
+      @document.update_attributes(:dispatch_number => 1)
+    end
     if @document.save
-      redirect_to @document, :notice => "Successfully created document."
+      redirect_to documents_path, :notice => "Número gerado com sucesso: <span class=\"big-number\">#{@document.dispatch_number}</span>".html_safe
     else
       render :action => 'new'
     end
