@@ -4,12 +4,14 @@
 #
 #  id              :integer         not null, primary key
 #  user_id         :integer
-#  type            :string(255)
+#  doctype         :string(255)
 #  subject         :string(255)
 #  recipient       :string(255)
 #  dispatch_number :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  status          :string(255)
+#  pdf_file        :string(255)
 #
 
 one:

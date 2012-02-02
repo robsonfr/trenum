@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202163143) do
+ActiveRecord::Schema.define(:version => 20120202171116) do
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20120202163143) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+    t.string   "pdf_file"
   end
 
   create_table "users", :force => true do |t|

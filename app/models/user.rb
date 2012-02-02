@@ -21,6 +21,9 @@
 #  locked_at              :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  admin                  :boolean         default(FALSE)
+#  name                   :string(255)
+#  workplace              :string(255)
 #
 
 class User < ActiveRecord::Base
