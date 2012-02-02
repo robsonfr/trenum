@@ -3,7 +3,11 @@ class DocumentsController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @documents = Document.all
+    unless current_user.admin?
+      @documents = current_user.documents
+    else
+      @documents = Document.all
+    end
   end
 
   def show
@@ -22,7 +26,7 @@ class DocumentsController < ApplicationController
       @document.update_attributes(:dispatch_number => 1)
     end
     if @document.save
-      redirect_to documents_path, :notice => "Número gerado com sucesso: <span class=\"big-number\">#{@document.dispatch_number}</span>".html_safe
+      redirect_to documents_path, :notice => "Número gerado com sucesso: <span class=\"big-number\">#{@document.dispatch_number}</span><br />Por favor, não se esqueça de fazer o upload de uma cópia do documento assinado após o envio.".html_safe
     else
       render :action => 'new'
     end
