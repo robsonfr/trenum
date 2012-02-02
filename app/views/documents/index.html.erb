@@ -16,10 +16,8 @@
       <td><%= document.doctype %></td>
       <td><%= document.subject %></td>
       <td><%= document.recipient %></td>
-      <td><%= document.dispatch_number %></td>
+      <td style="text-align:right"><%= document.dispatch_number %></td>
       <td><%= link_to "Ver", document, :class => "note" %></td>
-      <td><%= link_to "Editar", edit_document_path(document), :class => "note" %></td>
-      <td><%= link_to "Destruir", document, :confirm => 'Você tem certeza?', :method => :delete, :class => "note" %></td>
     </tr>
   <% end %>
 </table>
