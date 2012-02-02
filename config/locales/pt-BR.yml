@@ -234,6 +234,7 @@ pt-BR:
         subject: "Assunto"
         recipient: "Destinatário"
         dispatch_number: "Número"
+        pdf_file: "Arquivo"
     errors:
       template:
         header:
