@@ -6,7 +6,7 @@ Trenum::Application.routes.draw do
                                                           :sign_out => "sair",
                                                           :password => "senha",
                                                           :confirmation => "confirmacao",
-                                                          :unlock => "destravar"} do
+                                                          :unlock => "desbloquear"} do
 
     get "/" => "devise/sessions#new"
 

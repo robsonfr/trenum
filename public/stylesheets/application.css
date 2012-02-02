@@ -74,6 +74,19 @@ a {
   margin: 0;
 }
 
+/* Tweaks */
+
 nav {
   float: right;
+}
+
+nav ul li {
+  list-style-type: none;
+}
+
+.field-note {
+  padding-left: 10px;
+  font-size: 70%;
+  color: #666;
+  font-style: italic;
 }
