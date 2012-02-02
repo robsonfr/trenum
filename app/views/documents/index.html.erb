@@ -8,6 +8,7 @@
     <th>Assunto</th>
     <th>Destinatário</th>
     <th>Número</th>
+    <th>Status</th>
   </tr>
   <% for document in @documents %>
     <tr>
@@ -17,6 +18,13 @@
       <td><%= document.subject %></td>
       <td><%= document.recipient %></td>
       <td style="text-align:right"><%= document.dispatch_number %></td>
+      <% if document.status == "Upload pendente" %>
+        <td style="color:red;font-weight:bold"><%= document.status %></td>
+      <% else %>
+        <td><%= document.status %></td>
+      <% end %>
+          
+      </td>
       <td><%= link_to "Ver", document, :class => "note" %></td>
     </tr>
   <% end %>

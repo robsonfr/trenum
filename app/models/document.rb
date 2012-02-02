@@ -14,5 +14,5 @@
 
 class Document < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :user_id, :doctype, :subject, :recipient, :dispatch_number
+  attr_accessible :user_id, :doctype, :subject, :recipient, :dispatch_number, :status
 end

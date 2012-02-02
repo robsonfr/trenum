@@ -24,11 +24,15 @@
   <strong>Destinatário:</strong>
   <%= @document.recipient %>
 </p>
-
+<p>
+  <strong>Status:</strong>
+  <%= @document.status %>
+</p>
 <p>
   <% if current_user.admin? %>
     <%= link_to "Editar", edit_document_path(@document) %> |
     <%= link_to "Destruir", @document, :confirm => 'Você tem certeza?', :method => :delete %> |
   <% end %>
+  <%= link_to "Cancelar envio", cancel_document_path, :confirm => 'Você tem certeza?', :method => :put %> |
   <%= link_to "Ver todos", documents_path %>
 </p>

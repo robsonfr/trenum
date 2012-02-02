@@ -1,5 +1,10 @@
 Trenum::Application.routes.draw do
-  resources :documents
+  resources :documents do
+    member do
+      put "/cancelar" => "documents#cancel", :as => "cancel"
+    end
+  end
+
 
   devise_for :users, :path => "usuarios", :path_names => {:sign_in => "entrar",
                                                           :sign_up => "registrar",
