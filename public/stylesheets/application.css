@@ -76,8 +76,12 @@ a {
 
 /* Tweaks */
 
-nav {
+header nav {
   float: right;
+}
+
+nav {
+  font-size: 80%;
 }
 
 nav ul li {
@@ -89,4 +93,15 @@ nav ul li {
   font-size: 70%;
   color: #666;
   font-style: italic;
+}
+
+div#error_explanation {
+  background-color: #FCC;
+  border: solid 1px #C66;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+div#error_explanation h2 {
+  font-size: 100%;
 }
