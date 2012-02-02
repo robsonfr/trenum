@@ -125,3 +125,7 @@ table th, table td {
   border: solid 1px #ddd;
   
 }
+
+table td {
+  font-size: 85%;
+}

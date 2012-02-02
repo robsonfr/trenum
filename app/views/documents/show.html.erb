@@ -26,7 +26,9 @@
 </p>
 
 <p>
-  <%= link_to "Editar", edit_document_path(@document) %> |
-  <%= link_to "Destruir", @document, :confirm => 'Você tem certeza?', :method => :delete %> |
+  <% if current_user.admin? %>
+    <%= link_to "Editar", edit_document_path(@document) %> |
+    <%= link_to "Destruir", @document, :confirm => 'Você tem certeza?', :method => :delete %> |
+  <% end %>
   <%= link_to "Ver todos", documents_path %>
 </p>
