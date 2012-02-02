@@ -1,7 +1,12 @@
 Trenum::Application.routes.draw do
   resources :documents
 
-  devise_for :users do
+  devise_for :users, :path => "usuarios", :path_names => {:sign_in => "entrar",
+                                                          :sign_up => "registrar",
+                                                          :sign_out => "sair",
+                                                          :password => "senha",
+                                                          :confirmation => "confirmacao",
+                                                          :unlock => "destravar"} do
 
     get "/" => "devise/sessions#new"
 
