@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202025435) do
+ActiveRecord::Schema.define(:version => 20120202104438) do
+
+  create_table "documents", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "subject"
+    t.string   "recipient"
+    t.integer  "dispatch_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

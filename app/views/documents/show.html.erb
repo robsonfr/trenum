@@ -1,0 +1,28 @@
+<% title "Document" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @document.user_id %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%= @document.type %>
+</p>
+<p>
+  <strong>Subject:</strong>
+  <%= @document.subject %>
+</p>
+<p>
+  <strong>Recipient:</strong>
+  <%= @document.recipient %>
+</p>
+<p>
+  <strong>Dispatch Number:</strong>
+  <%= @document.dispatch_number %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_document_path(@document) %> |
+  <%= link_to "Destroy", @document, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", documents_path %>
+</p>

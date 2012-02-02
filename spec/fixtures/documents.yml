@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: documents
+#
+#  id              :integer         not null, primary key
+#  user_id         :integer
+#  type            :string(255)
+#  subject         :string(255)
+#  recipient       :string(255)
+#  dispatch_number :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
+one:
+  user_id: 1
+  type: MyString
+  subject: MyString
+  recipient: MyString
+  dispatch_number: 1
+
+two:
+  user_id: 1
+  type: MyString
+  subject: MyString
+  recipient: MyString
+  dispatch_number: 1

@@ -1,4 +1,6 @@
 Trenum::Application.routes.draw do
+  resources :documents
+
   devise_for :users do
 
     get "/" => "devise/sessions#new"
