@@ -223,6 +223,9 @@ pt-BR:
       even: "deve ser par"
 
   activerecord:
+    models:
+      user: "Usuário"
+      document: "Documento"
     attributes:
       user:
         email: "Email"
@@ -236,6 +239,11 @@ pt-BR:
         dispatch_number: "Número"
         pdf_file: "Arquivo"
     errors:
+      models:
+        document:
+          attributes:
+            pdf_file:
+              carrierwave_integrity_error: "deve ser PDF."
       template:
         header:
           one: "Não foi possível gravar %{model}: 1 erro"
