@@ -28,6 +28,13 @@
   <strong>Status:</strong>
   <%= @document.status %>
 </p>
+<% if @document.pdf_file.blank? && @document.status == "Upload pendente" %>
+  <%= form_for @document, :html => {:multipart => true} do |f| %>
+    <%= f.error_messages %>
+    <%= f.file_field :pdf_file %><br />
+    <%= f.submit "Enviar documento" %>
+  <% end %>
+<% end %>
 <p>
   <% if current_user.admin? %>
     <%= link_to "Editar", edit_document_path(@document) %> |

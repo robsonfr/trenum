@@ -2,18 +2,15 @@
 
 <table>
   <tr>
-    <th>Usuário</th>
-    <th>Unidade</th>
     <th>Tipo</th>
     <th>Assunto</th>
     <th>Destinatário</th>
     <th>Número</th>
     <th>Status</th>
+    <th>Arquivo</th>
   </tr>
   <% for document in @documents %>
     <tr>
-      <td><%= document.user.name %></td>
-      <td><%= document.user.workplace %></td>
       <td><%= document.doctype %></td>
       <td><%= document.subject %></td>
       <td><%= document.recipient %></td>
@@ -23,7 +20,10 @@
       <% else %>
         <td><%= document.status %></td>
       <% end %>
-          
+      <td>
+      <% unless document.pdf_file.blank? %>
+        <%= link_to "Baixar", document.pdf_file.to_s %>
+      <% end %>
       </td>
       <td><%= link_to "Ver", document, :class => "note" %></td>
     </tr>

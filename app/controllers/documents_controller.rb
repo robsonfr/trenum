@@ -40,7 +40,12 @@ class DocumentsController < ApplicationController
   def update
     @document = Document.find(params[:id])
     if @document.update_attributes(params[:document])
-      redirect_to @document, :notice  => "Documento atualizado com sucesso."
+      if !@document.pdf_file.blank? && @document.status != "Finalizado"
+        @document.update_attributes(:status => "Finalizado")
+        redirect_to documents_path, :notice  => "Documento finalizado com sucesso. Obrigado!"
+      else
+        redirect_to @document, :notice  => "Documento atualizado com sucesso."
+      end
     else
       render :action => 'edit'
     end
