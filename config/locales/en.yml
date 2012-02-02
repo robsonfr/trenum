@@ -227,6 +227,9 @@ en:
       user:
         email: "Email"
         password: "Senha"
+        current_password: "Senha atual"
+        name: "Nome"
+        workplace: "Unidade"
       document:
         subject: "Assunto"
         recipient: "Destinatário"

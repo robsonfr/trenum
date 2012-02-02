@@ -1,18 +1,13 @@
 <%= form_for @document do |f| %>
   <%= f.error_messages %>
-<!--   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p> -->
-<!--   <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p> -->
   <p>
-  Usuário: <%= current_user.email %>
+    Usuário: <strong><%= current_user.name %></strong>
   </p>
   <p>
-  Unidade: <%= current_user.email %>
+    Unidade: <strong><%= current_user.workplace %></strong>
+  </p>
+  <p>
+    Tipo: <%= f.select :doctype, ["Ofício"] %>
   </p>
   <p>
     <%= f.label :subject %><br />
@@ -22,9 +17,5 @@
     <%= f.label :recipient %><br />
     <%= f.text_field :recipient %>
   </p>
-<!--   <p>
-    <%= f.label :dispatch_number %><br />
-    <%= f.text_field :dispatch_number %>
-  </p> -->
-  <p><%= f.submit %></p>
+  <p><%= f.submit "Gerar número", :confirm => "Por favor confira se os dados estão corretos." %></p>
 <% end %>

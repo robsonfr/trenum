@@ -19,7 +19,7 @@ a {
 }
 
 #container {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 20px 40px;
@@ -95,6 +95,10 @@ nav ul li {
   font-style: italic;
 }
 
+.note {
+  font-size: 80%;
+}
+
 div#error_explanation {
   background-color: #FCC;
   border: solid 1px #C66;
@@ -110,4 +114,14 @@ div#error_explanation h2 {
   font-weight: bold;
   font-size: 150%;
   padding-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+table th, table td {
+  padding: 10px;
+  border: solid 1px #ddd;
+  
 }

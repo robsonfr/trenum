@@ -1,28 +1,32 @@
-<% title "Document" %>
+<% title "#{@document.doctype} n. #{@document.dispatch_number}" %>
 
 <p>
-  <strong>User:</strong>
-  <%= @document.user_id %>
+  <strong>Usuário:</strong>
+  <%= @document.user.name %>
 </p>
 <p>
-  <strong>Type:</strong>
-  <%= @document.type %>
+  <strong>Unidade:</strong>
+  <%= @document.user.workplace %>
 </p>
 <p>
-  <strong>Subject:</strong>
+  <strong>Tipo:</strong>
+  <%= @document.doctype %>
+</p>
+<p>
+  <strong>Número:</strong>
+  <%= @document.dispatch_number %>
+</p>
+<p>
+  <strong>Assunto:</strong>
   <%= @document.subject %>
 </p>
 <p>
-  <strong>Recipient:</strong>
+  <strong>Destinatário:</strong>
   <%= @document.recipient %>
-</p>
-<p>
-  <strong>Dispatch Number:</strong>
-  <%= @document.dispatch_number %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_document_path(@document) %> |
-  <%= link_to "Destroy", @document, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", documents_path %>
+  <%= link_to "Editar", edit_document_path(@document) %> |
+  <%= link_to "Destruir", @document, :confirm => 'Você tem certeza?', :method => :delete %> |
+  <%= link_to "Ver todos", documents_path %>
 </p>

@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202145536) do
+ActiveRecord::Schema.define(:version => 20120202160336) do
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
-    t.string   "type"
+    t.string   "doctype"
     t.string   "subject"
     t.string   "recipient"
     t.integer  "dispatch_number"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20120202145536) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin",                                 :default => false
+    t.string   "name"
+    t.string   "workplace"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
