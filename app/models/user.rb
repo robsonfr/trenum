@@ -32,9 +32,12 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
-  email_regex = /^([^@\s]+)@(tre-sp.gov.br||wm.tre-sp.gov.br)$/i
+  # Só emails do TRE-SP
+  # email_regex = /^([^@\s]+)@(tre-sp.gov.br||wm.tre-sp.gov.br)$/i
+  # Qualquer email
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :email, :format => { :with => email_regex }, :allow_blank => true
+  validates :email, :format => { :with => email_regex }
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :workplace
 end
