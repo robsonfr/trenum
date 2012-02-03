@@ -39,5 +39,5 @@ class User < ActiveRecord::Base
 
   validates :email, :format => { :with => email_regex }
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :workplace
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :workplace, :admin
 end
