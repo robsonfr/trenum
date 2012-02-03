@@ -33,9 +33,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
   # Só emails do TRE-SP
-  # email_regex = /^([^@\s]+)@(tre-sp.gov.br||wm.tre-sp.gov.br)$/i
+  email_regex = /^([^@\s]+)@(tre-sp.gov.br||wm.tre-sp.gov.br)$/i
   # Qualquer email
-  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :email, :format => { :with => email_regex }
   # Setup accessible (or protected) attributes for your model

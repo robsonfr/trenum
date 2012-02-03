@@ -22,7 +22,7 @@
       <% end %>
       <td>
       <% unless document.pdf_file.blank? %>
-        <%= link_to "Baixar", document.pdf_file.to_s %>
+        <%= link_to "Baixar", document.pdf_file.url %>
       <% end %>
       </td>
       <td><%= link_to "Ver", document, :class => "note" %></td>
