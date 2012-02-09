@@ -5,7 +5,7 @@ class DocumentsController < ApplicationController
   
   def index
     unless current_user.admin?
-      @documents = current_user.documents
+      @documents = current_user.documents.order('doctype asc')
     else
       @documents = Document.all
     end
@@ -21,8 +21,9 @@ class DocumentsController < ApplicationController
 
   def create
     @document = current_user.documents.build(params[:document])
-    unless Document.all.empty?
-      @document.update_attributes(:dispatch_number => Document.last.dispatch_number + 1, :status => "Upload pendente")
+    @document_by_type = Document.find_all_by_doctype(@document.doctype)
+    unless @document_by_type.empty?
+      @document.update_attributes(:dispatch_number => Document.order('dispatch_number asc').find_all_by_doctype(@document.doctype).last.dispatch_number + 1, :status => "Upload pendente")
     else
       @document.update_attributes(:dispatch_number => 1, :status => "Upload pendente")
     end

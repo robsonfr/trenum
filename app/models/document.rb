@@ -18,5 +18,6 @@ class Document < ActiveRecord::Base
   belongs_to :user
   mount_uploader :pdf_file, PdfFileUploader
   validates :doctype, :subject, :recipient, :presence => true
+  validates_uniqueness_of :dispatch_number, :scope => :doctype
   attr_accessible :user_id, :doctype, :subject, :recipient, :dispatch_number, :status, :pdf_file
 end
