@@ -1,0 +1,45 @@
+<% title "#{@document.doctype} n. #{@document.dispatch_number}" %>
+
+<p>
+  <strong>Usuário:</strong>
+  <%= @document.user.name %>
+</p>
+<p>
+  <strong>Unidade:</strong>
+  <%= @document.user.workplace %>
+</p>
+<p>
+  <strong>Tipo:</strong>
+  <%= @document.doctype %>
+</p>
+<p>
+  <strong>Número:</strong>
+  <%= @document.dispatch_number %>
+</p>
+<p>
+  <strong>Assunto:</strong>
+  <%= @document.subject %>
+</p>
+<p>
+  <strong>Destinatário:</strong>
+  <%= @document.recipient %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @document.status %>
+</p>
+<% if @document.pdf_file.blank? && @document.status == "Upload pendente" %>
+  <%= form_for @document, :html => {:multipart => true} do |f| %>
+    <%= f.error_messages %>
+    <%= f.file_field :pdf_file %><br />
+    <%= f.submit "Enviar documento" %>
+  <% end %>
+<% end %>
+<p>
+  <% if current_user.admin? %>
+    <%= link_to "Editar", edit_document_path(@document) %> |
+    <%= link_to "Destruir", @document, :confirm => 'Você tem certeza?', :method => :delete %> |
+  <% end %>
+  <%= link_to "Cancelar envio", cancel_document_path, :confirm => 'Você tem certeza?', :method => :put %> |
+  <%= link_to "Ver todos", documents_path %>
+</p>

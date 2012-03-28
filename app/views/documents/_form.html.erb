@@ -1,0 +1,21 @@
+<%= form_for @document do |f| %>
+  <%= f.error_messages %>
+  <p>
+    Usuário: <strong><%= current_user.name %></strong>
+  </p>
+  <p>
+    Unidade: <strong><%= current_user.workplace %></strong>
+  </p>
+  <p>
+    Tipo: <%= f.select :doctype, ["Ofício", "Portaria", "Resolução"] %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :recipient %><br />
+    <%= f.text_field :recipient %>
+  </p>
+  <p><%= f.submit "Gerar número", :confirm => "Por favor confira se os dados estão corretos." %></p>
+<% end %>

@@ -1,0 +1,33 @@
+<% title "Documentos" %>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Assunto</th>
+    <th>Destinatário</th>
+    <th>Número</th>
+    <th>Status</th>
+    <th>Arquivo</th>
+  </tr>
+  <% for document in @documents %>
+    <tr>
+      <td><%= document.doctype %></td>
+      <td><%= document.subject %></td>
+      <td><%= document.recipient %></td>
+      <td style="text-align:right"><%= document.dispatch_number %></td>
+      <% if document.status == "Upload pendente" %>
+        <td style="color:red;font-weight:bold"><%= document.status %></td>
+      <% else %>
+        <td><%= document.status %></td>
+      <% end %>
+      <td>
+      <% unless document.pdf_file.blank? %>
+        <%= link_to "Baixar", document.pdf_file.url %>
+      <% end %>
+      </td>
+      <td><%= link_to "Ver", document, :class => "note" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Gerar número", new_document_path %></p>
