@@ -5,7 +5,6 @@ Trenum::Application.routes.draw do
     end
   end
 
-
 #  devise_for :users, :path => "usuarios", :path_names => {:sign_in => "entrar",
 #                                                          :sign_up => "registrar",
 #                                                          :sign_out => "sair",
