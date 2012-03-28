@@ -6,18 +6,18 @@ Trenum::Application.routes.draw do
   end
 
 
-  devise_for :users, :path => "usuarios", :path_names => {:sign_in => "entrar",
-                                                          :sign_up => "registrar",
-                                                          :sign_out => "sair",
-                                                          :password => "senha",
-                                                          :confirmation => "confirmacao",
-                                                          :unlock => "desbloquear"} do
+#  devise_for :users, :path => "usuarios", :path_names => {:sign_in => "entrar",
+#                                                          :sign_up => "registrar",
+#                                                          :sign_out => "sair",
+#                                                          :password => "senha",
+#                                                          :confirmation => "confirmacao",
+#                                                          :unlock => "desbloquear"} do
+#
+#    get "/" => "devise/sessions#new"
+#
+#  end
 
-    get "/" => "devise/sessions#new"
-
-  end
-
-  root :to => "devise/sessions#new"
+#  root :to => "devise/sessions#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
