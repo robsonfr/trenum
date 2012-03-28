@@ -16,14 +16,14 @@
 
 one:
   user_id: 1
-  type: MyString
+  doctype: MyString
   subject: MyString
   recipient: MyString
   dispatch_number: 1
 
 two:
   user_id: 1
-  type: MyString
+  doctype: MyString
   subject: MyString
   recipient: MyString
   dispatch_number: 1

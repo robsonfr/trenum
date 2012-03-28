@@ -1,6 +1,5 @@
 #encoding:UTF-8
 class DocumentsController < ApplicationController
-  before_filter :authenticate_user!
   before_filter :check_profile_completeness
   
   def index

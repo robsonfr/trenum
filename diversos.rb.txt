@@ -1,0 +1,8 @@
+require 'net/http'
+require 'rexml/document'
+
+u = URI(caminho)
+resultado = Net::HTTP.post_form(u, :parametro1 => :valor1, :parametro2 => :valor2).body
+xml = REXML::Document.new(resultado)
+recursos = xml.elements['resposta'].elements['direitos'].text.split(/,\s*/)
+nome = xml.elements['resposta'].elements['nome'].text

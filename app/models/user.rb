@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
   has_many :documents
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable, :lockable,
-         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+  #devise :database_authenticatable, :registerable, :confirmable, :lockable,
+  #       :recoverable, :rememberable, :trackable, :validatable, :timeoutable
   # Só emails do TRE-SP
   email_regex = /^([^@\s]+)@(tre-sp.gov.br||wm.tre-sp.gov.br)$/i
   # Qualquer email

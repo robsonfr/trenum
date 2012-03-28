@@ -3,20 +3,15 @@
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div>
-  <%= f.label :email %><br />
-  <%= f.email_field :email %><span class="field-note">Somente são aceitos emails oficiais do TRE-SP</span>
+  <%= f.label :titulo_eleitor %><br />
+  <%= f.text_field :titulo_eleitor %><span class="field-note">T&iacute;tulo de Eleitor</span>
   </div>
 
   <div>
   <%= f.label :senha %><br />
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><span class="field-note">(a mesma do Acesso)</span>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :lembrar %></div>
-  <% end -%>
 
   <div><%= f.submit "Entrar" %></div>
 <% end %>
 <br />
-<%= render :partial => "devise/shared/links" %>

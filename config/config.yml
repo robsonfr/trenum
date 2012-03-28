@@ -1,0 +1,13 @@
+padrao: &PADRAO
+    caminho_acesso : http://acesso.tre-sp.gov.br
+    sigla_sistema : TRENUM
+    recurso_adm : ADMINISTRADOR
+    
+development:
+    <<: *PADRAO
+    
+production:
+    <<: *PADRAO    
+    
+test:
+    <<: *PADRAO    
