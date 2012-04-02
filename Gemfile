@@ -12,6 +12,7 @@ gem 'will_paginate', '3.0.0'
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'faker', '1.0.1'
+  gem 'simplecov'
 end
 
 # Development
@@ -28,5 +29,8 @@ group :test do
   gem 'spork', '0.9.0.rc9'
   gem 'factory_girl_rails', '1.3.0'
   gem 'webrat', '0.7.3'
-  gem 'mocha', '0.10.0'
+  gem 'mocha', '0.10.0' 
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
